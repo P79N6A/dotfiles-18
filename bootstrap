@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+
+# install xcode commandlinetools
+xcode-select --install
+
+# install homebrew
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# setup hostname
+sudo scutil --set HostName Stuart-MacBook
+
+# install cask: iTerm2, zsh, antigen
+brew cask install iterm2 zsh antigen
+
+# make zsh default
+sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
+chsh -s /usr/local/bin/zsh
+
+# clone stuarthua/dotfiles
+git clone https://github.com/stuarthua/dotfiles.git ~/.dotfiles
+
+# zshrc
+cp -f ~/.dotfiles/backup/.zshrc ~/.zshrc
+
+# bash
+cp -f ~/.dotfiles/backup/.bashrc ~/.bashrc
+cp -f ~/.dotfiles/backup/.bash_profile ~/.bash_profile
