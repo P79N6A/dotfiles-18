@@ -46,7 +46,7 @@ ehco "Successful revert ShadowsocksX-NG."
 备份目录：
 
 ```
-├── ssh
+├── SSH
     ├── config
     ├── id_rsa
     ├── id_rsa.pub
@@ -126,7 +126,6 @@ dotfiles 列表：
 macos 常用设置：
 
 * 触摸板
-* 三只切换
 
 ### 恢复个人数据
 
@@ -140,7 +139,7 @@ $ sh revert-sshconfig.sh
 
 #### 恢复其他数据
 
-从备份源中取回备份的数据（照片、视频、资料等）
+如照片、视频、资料等。
 
 ## 参考
 
