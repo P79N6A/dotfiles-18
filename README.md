@@ -127,6 +127,7 @@ dotfiles 列表：
 * proxifier
 * shadowsocksx-ng
 * snipaste
+* git
 * bash
 * zsh
 * mackup
