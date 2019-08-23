@@ -122,10 +122,35 @@ $ curl -s https://raw.githubusercontent.com/stuarthus/dotfiles/master/revert-all
 dotfiles 列表：
 
 * iterm2
+* alfred
+* android-studio
+* proxifier
+* shadowsocksx-ng
+* snipaste
+* bash
+* zsh
+* mackup
+* vscode
+* sublime-text-3
+* vim
 
 macos 常用设置：
 
-* 触摸板
+* 触摸板 - 轻点来点按
+* 触摸板 - 三指拖拽
+* Finder - 默认标签页打开桌面
+* Finder - 显示所有文件拓展名
+* Finder - 显示状态栏、路径栏
+* Finder - 排序时，文件夹显示在前
+* Finder - 默认搜索当前文件夹
+* 锁屏 - 睡眠或显示屏保时需要输入密码的时间：立即
+* 触发角 - 左下角关闭屏幕
+* 键盘 - 允许全键盘控制
+* 键盘 - F1、F12 作为标准按键
+* 显示电池百分比
+* 状态栏显示输入法
+* U 盘上禁止生成 `.DS_Store` 文件
+* 禁用文字自动纠正
 
 ### 恢复个人数据
 
