@@ -168,6 +168,10 @@ $ sh revert-sshconfig.sh
 
 ## 参考
 
-* [mackup]()
-* []()
-* []()
+* [zsh-users/antigen](https://github.com/zsh-users/antigen)
+* [lra/mackup](https://github.com/lra/mackup)
+* [unixorn/awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)
+* [herrbischoff/awesome-macos-command-line](https://github.com/herrbischoff/awesome-macos-command-line)
+* [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [crispgm/dotfiles](https://github.com/crispgm/dotfiles)
+* [bestswifter/macbootstrap](https://github.com/bestswifter/macbootstrap)
