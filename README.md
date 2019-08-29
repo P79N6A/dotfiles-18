@@ -5,8 +5,8 @@ Mac 使用的 dotfiles，用于重装系统时快速恢复开发环境。
 Step By Step:
 
 1. 重装系统后，安装 ShadowsocksX-NG
-2. Terminal - `curl -s "https://raw.githubusercontent.com/stuarthus/dotfiles/master/bootstrap" | bash`
-3. iTerm2 - `curl -s "https://raw.githubusercontent.com/stuarthus/dotfiles/master/revert-all" | bash`
+2. Terminal - `curl -s "https://raw.githubusercontent.com/stuarthua/dotfiles/master/bootstrap" | bash`
+3. iTerm2 - `curl -s "https://raw.githubusercontent.com/stuarthua/dotfiles/master/revert-all" | bash`
 4. 同步个人数据
 
 ## 准备
@@ -89,7 +89,7 @@ $ sh revert-shadowsocks.sh
 打开系统 Terminal，执行：
 
 ```bash
-$ curl -s "https://raw.githubusercontent.com/stuarthus/dotfiles/master/bootstrap" | bash
+$ curl -s "https://raw.githubusercontent.com/stuarthua/dotfiles/master/bootstrap" | bash
 ```
 
 关闭 Terminal。
@@ -109,7 +109,7 @@ $ curl -s "https://raw.githubusercontent.com/stuarthus/dotfiles/master/bootstrap
 打开 iTerm2，执行：
 
 ```bash
-$ curl -s "https://raw.githubusercontent.com/stuarthus/dotfiles/master/revert-all" | bash
+$ curl -s "https://raw.githubusercontent.com/stuarthua/dotfiles/master/revert-all" | bash
 ```
 
 #### revert-all 做的事
