@@ -14,8 +14,12 @@ fi
 # setup hostname
 sudo scutil --set HostName Stuart-MacBook
 
-# install cask: iTerm2, zsh, antigen
-brew cask install iterm2 zsh antigen
+# install cask: iTerm2, vistual-studio-code, google-chrome
+brew cask install iterm2 vistual-studio-code sublime-text google-chrome proxifier alfred
+# install zsh, antigen
+brew install zsh antigen
+# install others
+brew install mas mackup vim genact
 
 # make zsh default
 sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
@@ -25,8 +29,11 @@ chsh -s /usr/local/bin/zsh
 git clone https://github.com/stuarthua/dotfiles.git ~/.dotfiles
 
 # zshrc
-cp -f ~/.dotfiles/backup/.zshrc ~/.zshrc
+\cp -f ~/.dotfiles/backup/.zshrc ~/.zshrc
 
 # bash
-cp -f ~/.dotfiles/backup/.bashrc ~/.bashrc
-cp -f ~/.dotfiles/backup/.bash_profile ~/.bash_profile
+\cp -f ~/.dotfiles/backup/.bashrc ~/.bashrc
+\cp -f ~/.dotfiles/backup/.bash_profile ~/.bash_profile
+
+# make it work
+source ~/.bashrc

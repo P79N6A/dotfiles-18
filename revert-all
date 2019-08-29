@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 
 # install all from homebrew
-brew install mas
 set +e
 brew bundle --file="~/.dotfiles/backup/Brewfile"
 set -e
 
 # revert dotfiles with mackup
-brew install mackup
-cp -f ~/.dotfiles/backup/.mackup ~/.mackup
-cp -f ~/.dotfiles/.mackup.cfg ~/.mackup.cfg
+\cp -fR ~/.dotfiles/backup/.mackup ~/.mackup
+\cp -f ~/.dotfiles/backup/.mackup.cfg ~/.mackup.cfg
 mackup restore
 
 # macOS setups
