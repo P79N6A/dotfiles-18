@@ -3,7 +3,10 @@
 set -e
 
 # install xcode commandlinetools
+ctlPath="~/Library/Developer/CommandLineTools"
+if [ ! -d "$ctlPath"]; then
 xcode-select --install
+fi
 
 # install homebrew
 if test ! $(which brew); then
@@ -12,7 +15,7 @@ if test ! $(which brew); then
 fi
 
 # setup hostname
-sudo scutil --set HostName Stuart-MacBook
+sudo scutil --set HostName "Stuart's MacBook Pro 13\""
 
 # install cask: iTerm2, vistual-studio-code, google-chrome
 brew cask install iterm2 vistual-studio-code sublime-text google-chrome proxifier alfred
