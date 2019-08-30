@@ -1,42 +1,61 @@
-#!/usr/bin bash
+#!/usr/bin/env bash
 
 set -e
 
 # install xcode commandlinetools
-ctlPath="~/Library/Developer/CommandLineTools"
-if [ ! -d "$ctlPath"]; then
-xcode-select --install
+if test ! -d /Library/Developer/CommandLineTools; then
+  echo -e "Installing CommandLineTools...\n"
+  xcode-select --install
+else
+  echo -e "CommandLineTools already installed.\n"
 fi
 
 # install homebrew
 if test ! $(which brew); then
-  echo "Installing homebrew..."
+  echo -e "Installing homebrew...\n"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo -e "Homebrew already installed.\n"
 fi
 
 # setup hostname
-sudo scutil --set HostName "Stuart's MacBook Pro 13\""
+echo -e "Set hostname.\n"
+cur_hostname=`scutil --get HostName`
+new_hostname="Stuart's MacBook Pro 13\""
+if test "$cur_hostname" != "$new_hostname" ; then
+  sudo scutil --set HostName "$new_hostname"
+  sudo scutil --set ComputerName "$new_hostname"
+fi
 
-# install cask: iTerm2, vistual-studio-code, google-chrome
-brew cask install iterm2 vistual-studio-code sublime-text google-chrome proxifier alfred
+# brew install 
+echo -e "Installing homebrew formulae and cask: "
+# install cask: iTerm2, visual-studio-code, google-chrome
+brew cask install iterm2 visual-studio-code sublime-text google-chrome proxifier alfred
 # install zsh, antigen
 brew install zsh antigen
 # install others
 brew install mas mackup vim genact
 
 # make zsh default
-sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
-chsh -s /usr/local/bin/zsh
+echo -e "\nSet zsh as default shell.\n"
+if test $SHELL != "/usr/local/bin/zsh"; then
+  sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
+  chsh -s /usr/local/bin/zsh
+fi
 
 # clone stuarthua/dotfiles
-git clone https://github.com/stuarthua/dotfiles.git ~/.dotfiles
+echo -e "Clone dotfiles repo from github.\n"
+if test ! -d ~/.dotfiles; then
+  git clone https://github.com/stuarthua/dotfiles.git ~/.dotfiles
+fi
 
-# zshrc
-\cp -f ~/.dotfiles/backup/.zshrc ~/.zshrc
+# revert dotfiles with mackup
+echo -e "Use mackup to restore dotfiles."
+rm -rf ~/.mackup ~/.mackup.cfg
+/bin/cp -fR ~/.dotfiles/backup/.mackup ~
+/bin/cp -f ~/.dotfiles/backup/.mackup.cfg ~
+yes | mackup restore
 
-# bash
-\cp -f ~/.dotfiles/backup/.bashrc ~/.bashrc
-\cp -f ~/.dotfiles/backup/.bash_profile ~/.bash_profile
-
-# make it work
-source ~/.bashrc
+# make zshrc work
+echo -e "Make zshrc work."
+source ~/.zshrc

@@ -1,17 +1,12 @@
-#!/usr/bin bash
+#!/usr/bin/env bash
 
 # install all from homebrew
 set +e
 brew bundle --file="~/.dotfiles/backup/Brewfile"
 set -e
 
-# revert dotfiles with mackup
-\cp -fR ~/.dotfiles/backup/.mackup ~/.mackup
-\cp -f ~/.dotfiles/backup/.mackup.cfg ~/.mackup.cfg
-mackup restore
-
 # macOS setups
-./bin/macos
+./macos
 
 # setup workspace
 mkdir -p ~/work
