@@ -18,14 +18,14 @@ else
   echo -e "Homebrew already installed.\n"
 fi
 
-# setup hostname
-echo -e "Set hostname.\n"
-cur_hostname=`scutil --get HostName`
-new_hostname="Stuart's MacBook Pro 13\""
-if test "$cur_hostname" != "$new_hostname" ; then
-  sudo scutil --set HostName "$new_hostname"
-  sudo scutil --set ComputerName "$new_hostname"
-fi
+# # setup hostname
+# echo -e "Set hostname.\n"
+# cur_hostname=`scutil --get HostName`
+# new_hostname="Stuart's MacBook Pro 13\""
+# if test "$cur_hostname" != "$new_hostname" ; then
+#   sudo scutil --set HostName "$new_hostname"
+#   sudo scutil --set ComputerName "$new_hostname"
+# fi
 
 # brew install 
 echo -e "Installing homebrew formulae and cask: "
@@ -55,7 +55,3 @@ rm -rf ~/.mackup ~/.mackup.cfg
 /bin/cp -fR ~/.dotfiles/backup/.mackup ~
 /bin/cp -f ~/.dotfiles/backup/.mackup.cfg ~
 yes | mackup restore
-
-# make zshrc work
-echo -e "Make zshrc work."
-source ~/.zshrc

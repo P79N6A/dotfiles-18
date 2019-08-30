@@ -34,7 +34,6 @@ $ curl "https://raw.githubusercontent.com/stuarthua/dotfiles/master/bootstrap" |
 * 配置 zsh 为默认 shell，配置 `~/.zshrc`
 * 克隆 stuarthua/dotfiles 至 `~/.dotfiles`
 * 使用 mackup 恢复 dotfiles
-* 重载 zsh 配置
 
 dotfiles 列表：
 

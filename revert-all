@@ -2,11 +2,11 @@
 
 # install all from homebrew
 set +e
-brew bundle --file="~/.dotfiles/backup/Brewfile"
+brew bundle --file="~/.dotfiles/Brewfile"
 set -e
 
 # macOS setups
-./macos
+~/.dotfiles/macos
 
 # setup workspace
 mkdir -p ~/work
