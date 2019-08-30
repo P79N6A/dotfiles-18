@@ -2,7 +2,7 @@
 
 set -e
 
-# install xcode commandlinetools
+# install commandlinetools
 if test ! -d /Library/Developer/CommandLineTools; then
   echo -e "Installing CommandLineTools...\n"
   xcode-select --install
@@ -29,12 +29,12 @@ fi
 
 # brew install 
 echo -e "Installing homebrew formulae and cask: "
-# install cask: iTerm2, visual-studio-code, google-chrome
-brew cask install iterm2 visual-studio-code sublime-text google-chrome proxifier alfred
+# install cask: iTerm2
+brew cask install iterm2 shadowsocksx-ng
 # install zsh, antigen
 brew install zsh antigen
 # install others
-brew install mas mackup vim genact
+brew install mas mackup
 
 # make zsh default
 echo -e "\nSet zsh as default shell.\n"
