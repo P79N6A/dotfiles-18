@@ -50,6 +50,7 @@ dotfiles 列表：
 * shadowsocksx-ng
 * snipaste
 * ssh
+* tencent-lemon
 * zsh
 
 > 说明：
