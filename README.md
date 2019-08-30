@@ -5,8 +5,8 @@ Mac 使用的 dotfiles，用于重装系统时快速恢复开发环境。
 Step By Step:
 
 1. 抹盘重装系统
-2. Terminal - `bash bootstrap`
-3. iTerm2 - `bash revert-all`
+2. Terminal - `curl "https://raw.githubusercontent.com/stuarthua/dotfiles/master/bootstrap" | bash`
+3. iTerm2 - `curl "https://raw.githubusercontent.com/stuarthua/dotfiles/master/revert-all" | bash`
 4. 同步个人数据
 
 ## 准备
@@ -20,7 +20,7 @@ Step By Step:
 打开系统 Terminal，执行：
 
 ```bash
-$ bash bootstrap
+$ curl "https://raw.githubusercontent.com/stuarthua/dotfiles/master/bootstrap" | bash
 ```
 
 关闭 Terminal。
@@ -60,7 +60,7 @@ dotfiles 列表：
 打开 iTerm2，执行：
 
 ```bash
-$ bash revert-all
+$ curl "https://raw.githubusercontent.com/stuarthua/dotfiles/master/revert-all" | bash
 ```
 
 #### revert-all 做的事
