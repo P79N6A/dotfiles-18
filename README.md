@@ -53,6 +53,8 @@ dotfiles 列表：
 * ssh
 * zsh
 
+> 说明：vscode 的同步，使用 Setting Sync 插件
+
 ### 执行 revert-all
 
 打开 iTerm2，执行：
