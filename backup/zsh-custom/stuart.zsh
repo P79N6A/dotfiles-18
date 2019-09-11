@@ -7,6 +7,14 @@
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 
+# sdkman (install and manage java)
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# ruby (for jekyll)
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+
 
 #### functions ####
 
@@ -19,11 +27,58 @@ function startss() {
   echo -e "已开启 shadowsocks 终端代理 (端口：1087)"
   curl ip.gs
 }
-function stopss(){
-    unset http_proxy
-    unset https_proxy
-    echo -e "已关闭 shadowsocks 终端代理"
-    curl ip.gs
+function stopss() {
+  unset http_proxy
+  unset https_proxy
+  echo -e "已关闭 shadowsocks 终端代理"
+  curl ip.gs
+}
+function showss() {
+  curl ip.gs
+}
+
+# switch homebrew origin
+function switch2aliyunbrew() {
+  curPath=`pwd`
+  # 替换 brew.git:
+  cd "$(brew --repo)"
+  git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+  # 替换 homebrew-core.git:
+  cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+  git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+  # 替换 homebrew-bottles:
+  export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+  # 应用生效
+  brew update
+  # show origin
+  git remote -v
+  echo "HOMEBREW_BOTTLE_DOMAIN: $HOMEBREW_BOTTLE_DOMAIN"
+  cd $curPath
+}
+function switch2homebrew() {
+  curPath=`pwd`
+  # 重置 brew.git:
+	cd "$(brew --repo)"
+	git remote set-url origin https://github.com/Homebrew/brew.git
+	# 重置 homebrew-core.git:
+	cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+	git remote set-url origin https://github.com/Homebrew/homebrew-core.git
+  # 重置 homebrew-bottles:
+  unset HOMEBREW_BOTTLE_DOMAIN
+  # 应用生效
+  brew update
+  # show origin
+  git remote -v
+  echo "HOMEBREW_BOTTLE_DOMAIN: $HOMEBREW_BOTTLE_DOMAIN"
+  cd $curPath
+}
+function showbrew() {
+  curPath=`pwd`
+  cd "$(brew --repo)"
+  # show origin
+  git remote -v
+  echo "HOMEBREW_BOTTLE_DOMAIN: $HOMEBREW_BOTTLE_DOMAIN"
+  cd $curPath
 }
 
 # switch python version

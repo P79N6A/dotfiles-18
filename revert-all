@@ -6,7 +6,7 @@ brew bundle --file="~/.dotfiles/Brewfile"
 set -e
 
 # macOS setups
-~/.dotfiles/macos
+# ~/.dotfiles/macos
 
 # setup workspace
 mkdir -p ~/work

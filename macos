@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# setup hostname
+echo -e "Set hostname.\n"
+cur_hostname=`scutil --get HostName`
+new_hostname="Stuart's MacBook Pro 13\""
+if test "$cur_hostname" != "$new_hostname" ; then
+  sudo scutil --set HostName "$new_hostname"
+  sudo scutil --set ComputerName "$new_hostname"
+fi
+
 # Trackpad: enable tap to click for current user and login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
