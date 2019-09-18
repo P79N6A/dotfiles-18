@@ -110,6 +110,12 @@ function switch2python3() {
 #### alias ####
 
 
+# flush dns cache (OS X v10.10.4 or high version)
+alias cleardnscache="sudo killall -HUP mDNSResponder"
+
+# dns test (dig and ping)
+alias dnscheck="bash $HOME/.dotfiles/backup/zsh-custom/dnscheck.sh"
+
 # brew daily
 alias dailybrew="brew update && brew upgrade && brew cleanup && brew doctor"
 
